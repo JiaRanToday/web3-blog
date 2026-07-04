@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="JiaRan 的个人知识库" />
+    <title>JiaRan · 知识花园</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Serif+SC:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="返回首页">
+        <span class="brand-mark">J</span>
+        <span>JiaRan's garden</span>
+      </a>
+      <nav aria-label="主导航">
+        <a class="active" href="#top">首页</a>
+        <a href="#notes">笔记</a>
+        <a href="#topics">主题</a>
+        <a href="#about">关于我</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="切换深浅色模式">
+        <span class="sun">☼</span><span class="moon">☾</span>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <p class="eyebrow">PERSONAL KNOWLEDGE BASE · 2026</p>
+        <h1>把零散的好奇心，<br /><em>种成自己的花园。</em></h1>
+        <p class="hero-copy">这里收集我读到的、想到的、正在学习的一切。<br />不求完美，只让每一个念头有地方慢慢生长。</p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#notes">开始阅读 <span>↓</span></a>
+          <a class="text-link" href="#about">认识一下我 <span>→</span></a>
+        </div>
+        <div class="sprout" aria-hidden="true"><i></i><i></i><b></b></div>
+      </section>
+
+      <section class="search-area" aria-label="搜索笔记">
+        <label class="search-box">
+          <span>⌕</span>
+          <input id="search" type="search" placeholder="搜索笔记、灵感或关键词…" autocomplete="off" />
+          <kbd>⌘ K</kbd>
+        </label>
+        <p id="search-result" role="status"></p>
+      </section>
+
+      <section class="featured" aria-labelledby="featured-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">START HERE</p>
+            <h2 id="featured-title">最近在想</h2>
+          </div>
+          <a class="text-link" href="#notes">所有笔记 <span>→</span></a>
+        </div>
+        <article class="feature-card searchable" data-search="如何建立不焦虑的知识管理系统 效率 学习 思考">
+          <div class="feature-art"><span>✦</span><span>✳</span><span>●</span></div>
+          <div class="feature-content">
+            <p class="meta"><span class="tag thinking">思考</span> 2026.06.18 · 6 min read</p>
+            <h3>如何建立一个<br />不焦虑的知识管理系统</h3>
+            <p>知识不是待办清单。与其追求“全部收集”，不如先搭一个愿意反复回来的小空间。</p>
+            <a href="#notes" class="read-link">阅读全文 <span>↗</span></a>
+          </div>
+        </article>
+      </section>
+
+      <section id="topics" class="topics" aria-labelledby="topic-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">EXPLORE BY TOPIC</p>
+            <h2 id="topic-title">按主题漫游</h2>
+          </div>
+        </div>
+        <div class="topic-grid">
+          <a href="#notes" class="topic-card orange"><span class="topic-icon">✺</span><strong>创作与表达</strong><small>12 篇笔记</small><b>→</b></a>
+          <a href="#notes" class="topic-card blue"><span class="topic-icon">⌁</span><strong>技术与 Web3</strong><small>08 篇笔记</small><b>→</b></a>
+          <a href="#notes" class="topic-card green"><span class="topic-icon">◒</span><strong>生活实验</strong><small>16 篇笔记</small><b>→</b></a>
+          <a href="#notes" class="topic-card lilac"><span class="topic-icon">☽</span><strong>阅读与思考</strong><small>24 篇笔记</small><b>→</b></a>
+        </div>
+      </section>
+
+      <section id="notes" class="notes" aria-labelledby="notes-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">THE NOTEBOOK</p>
+            <h2 id="notes-title">所有笔记</h2>
+          </div>
+          <div class="filter-row" aria-label="笔记筛选">
+            <button class="filter active" data-filter="all">全部</button>
+            <button class="filter" data-filter="阅读">阅读</button>
+            <button class="filter" data-filter="技术">技术</button>
+            <button class="filter" data-filter="生活">生活</button>
+          </div>
+        </div>
+        <div class="notes-grid">
+          <article class="note-card searchable" data-category="阅读" data-search="读书 如何读一本书 阅读 认知">
+            <span class="tag reading">阅读</span><p class="date">06.12</p><h3>读完一本书以后，真正重要的是什么？</h3><p>关于阅读、遗忘与留下痕迹的一点小练习。</p><a href="#" aria-label="阅读文章">↗</a>
+          </article>
+          <article class="note-card searchable" data-category="技术" data-search="web3 入门 区块链 钱包 技术">
+            <span class="tag tech">技术</span><p class="date">06.08</p><h3>Web3 到底是什么：一个给自己的解释</h3><p>不用术语，试着把这个新世界说得更明白一点。</p><a href="#" aria-label="阅读文章">↗</a>
+          </article>
+          <article class="note-card searchable" data-category="生活" data-search="慢下来 生活 节奏 工作">
+            <span class="tag life">生活</span><p class="date">05.27</p><h3>给“慢下来”一点实际的空间</h3><p>不是躺平，而是重新设计自己的日常节奏。</p><a href="#" aria-label="阅读文章">↗</a>
+          </article>
+          <article class="note-card searchable" data-category="技术" data-search="AI 工具 工作流 技术 灵感">
+            <span class="tag tech">技术</span><p class="date">05.19</p><h3>我正在使用的 AI 小工具</h3><p>让机器帮忙，但不把思考外包出去。</p><a href="#" aria-label="阅读文章">↗</a>
+          </article>
+          <article class="note-card searchable" data-category="阅读" data-search="卡片笔记 写作 读书 知识管理">
+            <span class="tag reading">阅读</span><p class="date">05.03</p><h3>卡片笔记法：从收藏到连接</h3><p>一套不那么严肃、却更容易坚持的笔记方式。</p><a href="#" aria-label="阅读文章">↗</a>
+          </article>
+          <article class="note-card searchable" data-category="生活" data-search="周末 散步 生活 城市">
+            <span class="tag life">生活</span><p class="date">04.22</p><h3>周末散步时想到的三件小事</h3><p>城市、天气，以及那些没必要立刻回答的问题。</p><a href="#" aria-label="阅读文章">↗</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="portrait">J<span>✦</span></div>
+        <div><p class="eyebrow">ABOUT THE GARDENER</p><h2>你好，我是 JiaRan。</h2><p>一个持续学习、偶尔折腾技术、总想把生活过得更有意思的人。这个网站是我的数字书桌，也是一个欢迎你随时坐下来的角落。</p><a href="mailto:hello@example.com" class="text-link">给我写封信 <span>→</span></a></div>
+      </section>
+    </main>
+    <footer><span>© 2026 JiaRan</span><span>Made slowly, with curiosity.</span><a href="#top">回到顶部 ↑</a></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
