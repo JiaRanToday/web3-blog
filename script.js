@@ -34,7 +34,8 @@ function updateCards() {
   let matches = 0;
 
   cards.forEach((card) => {
-    const matchesSearch = !term || card.dataset.search.toLowerCase().includes(term);
+    const searchableText = card.dataset.search?.toLowerCase() || "";
+    const matchesSearch = !term || searchableText.includes(term);
     const matchesCategory =
       selectedCategory === "all" ||
       card.dataset.category === selectedCategory ||
@@ -45,10 +46,10 @@ function updateCards() {
     if (visible && card.dataset.category) matches += 1;
   });
 
-  result.textContent = term ? `找到 ${matches} 篇相关笔记` : "";
+  result.textContent = term ? `找到 ${matches} 条相关内容` : "";
 }
 
-function setWalletDisconnected(message = "安装 MetaMask 或其他兼容 EVM 的钱包后即可体验。") {
+function setWalletDisconnected(message = "请使用安装了 MetaMask 的浏览器，或在钱包 App 内置浏览器中打开本站。") {
   connectedAddress = "";
   walletStatus.textContent = "未连接";
   walletStatus.className = "wallet-status offline";
@@ -83,7 +84,7 @@ async function setWalletConnected(address) {
 
 async function connectWallet() {
   if (!window.ethereum) {
-    setWalletDisconnected("没有检测到钱包。请先安装 MetaMask，或在钱包 App 的内置浏览器中打开本站。");
+    setWalletDisconnected("没有检测到钱包。请安装 MetaMask，或用 MetaMask / OKX / Rabby 等钱包 App 的内置浏览器打开本站。");
     return;
   }
 
@@ -144,7 +145,7 @@ copyAddress.addEventListener("click", async () => {
 });
 
 disconnectWallet.addEventListener("click", () => {
-  setWalletDisconnected("已从本站断开显示。钱包本身仍然安全保存在你的浏览器/钱包 App 中。");
+  setWalletDisconnected("已从本站断开显示。钱包本身仍然安全保存在你的浏览器或钱包 App 中。");
 });
 
 if (window.ethereum) {
